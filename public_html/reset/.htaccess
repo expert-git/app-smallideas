@@ -1,0 +1,8 @@
+Options +FollowSymlinks
+RewriteEngine On
+
+# rewrite activity category paths
+RewriteCond  %{REQUEST_FILENAME} !-d
+RewriteCond  %{REQUEST_FILENAME} !-f
+RewriteRule ^([a-z0-9\-]+)/$ /reset/?id=$1 [PT,L,NC,QSA]
+

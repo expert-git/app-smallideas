@@ -1,0 +1,63 @@
+Options +FollowSymlinks
+RewriteEngine On
+
+# Neat Ideas rewrites
+RewriteRule ^neatideas/gumbuya$ /voucher.html?id=835&insec=neatideas
+RewriteRule ^neatideas/gumbuya&refreshed=1$ /voucher.html?id=835&insec=neatideas&refreshed=1
+
+RewriteRule ^neatideas/lahlahs$ /voucher.html?id=859&insec=neatideas
+RewriteRule ^neatideas/lahlahs&refreshed=1$ /voucher.html?id=859&insec=neatideas&refreshed=1
+
+RewriteRule ^neatideas/santa$ /voucher.html?id=853&insec=neatideas
+RewriteRule ^neatideas/santa&refreshed=1$ /voucher.html?id=853&insec=neatideas&refreshed=1
+
+RewriteRule ^neatideas/latitude$ /voucher.html?id=279&insec=neatideas
+RewriteRule ^neatideas/latitude&refreshed=1$ /voucher.html?id=279&insec=neatideas&refreshed=1
+
+RewriteRule ^neatideas/amazenthings$ /voucher.html?id=620&insec=neatideas
+RewriteRule ^neatideas/amazenthings&refreshed=1$ /voucher.html?id=620&insec=neatideas&refreshed=1
+
+RewriteRule ^neatideas/4parkpass$ /voucher.html?id=521&insec=neatideas
+RewriteRule ^neatideas/4parkpass&refreshed=1$ /voucher.html?id=521&insec=neatideas&refreshed=1
+
+RewriteRule ^neatideas/chocolate$ /voucher.html?id=591&insec=neatideas
+RewriteRule ^neatideas/chocolate&refreshed=1$ /voucher.html?id=591&insec=neatideas&refreshed=1
+
+RewriteRule ^neatideas/funfields$ /voucher.html?id=833&insec=neatideas
+RewriteRule ^neatideas/funfields&refreshed=1$ /voucher.html?id=833&insec=neatideas&refreshed=1
+
+RewriteRule ^neatideas/melbournemuseum$ /voucher.html?id=399&insec=neatideas
+RewriteRule ^neatideas/melbournemuseum&refreshed=1$ /voucher.html?id=399&insec=neatideas&refreshed=1
+
+RewriteRule ^neatideas/dinosaur$ /voucher.html?id=502&insec=neatideas
+RewriteRule ^neatideas/dinosaur&refreshed=1$ /voucher.html?id=502&insec=neatideas&refreshed=1
+
+RewriteRule ^neatideas/timezone$ /voucher.html?id=862&insec=neatideas
+RewriteRule ^neatideas/timezone&refreshed=1$ /voucher.html?id=862&insec=neatideas&refreshed=1
+
+RewriteRule ^neatideas/featherdale$ /voucher.html?id=639&insec=neatideas
+RewriteRule ^neatideas/featherdale&refreshed=1$ /voucher.html?id=639&insec=neatideas&refreshed=1
+
+RewriteRule ^neatideas/monkeymania$ /voucher.html?id=860&insec=neatideas
+RewriteRule ^neatideas/monkeymania&refreshed=1$ /voucher.html?id=860&insec=neatideas&refreshed=1
+
+RewriteRule ^neatideas/lollipops$ /voucher.html?id=861&insec=neatideas
+RewriteRule ^neatideas/lollipops&refreshed=1$ /voucher.html?id=861&insec=neatideas&refreshed=1
+
+RewriteRule ^neatideas/maritime$ /voucher.html?id=863&insec=neatideas
+RewriteRule ^neatideas/maritime&refreshed=1$ /voucher.html?id=863&insec=neatideas&refreshed=1
+
+# force SSL 
+RewriteCond %{HTTPS} !=on
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# html to php
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^(.*)\.html $1\.php
+
+ErrorDocument 404 /404.html

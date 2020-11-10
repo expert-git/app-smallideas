@@ -1,0 +1,19 @@
+{
+  "short_name": "Small Ideas",
+  "name": "Small Ideas",
+  "icons": [
+    {
+      "src": "smallideas167.png",
+      "sizes": "167x167",
+      "type": "image/png"
+    },
+    {
+      "src": "smallideas152.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "https://app.smallideas.com.au",
+  "display": "standalone",
+  "orientation": "portrait"
+}     
